@@ -1,16 +1,16 @@
-package cycles;
+package loop;
+
+import java.math.BigInteger;
 
 /**
  * Составить программу нахождения произведения квадратов первых двухсот чисел
  */
 public class Task4 {
     public static void main(String[] args) {
-        long sum = 1;
-        for (long i = 1; i <= 200; i++) {
-            sum *= (i * i);
+        BigInteger sum = BigInteger.ONE;
+        for (int i = 1; i <= 200; i++) {
+            sum = sum.multiply(BigInteger.valueOf(i).pow(2));
         }
         System.out.println(sum);
-        // Число выходит за длину long и умнажает в итоге на 0, а при double пишет
-        // Infinity
     }
 }
