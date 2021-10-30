@@ -15,20 +15,20 @@ public class Task8 {
         int newLength = 0;
         int newIndex = 0;
         System.out.println(Arrays.toString(array));//print original array
-        for (int index : array) {
-            if (index < min) {
-                min = index;
+        for (int value : array) {
+            if (value < min) {
+                min = value;
             }
         }
-        for (int index : array) {
-            if (index != min) {
+        for (int value : array) {
+            if (value != min) {
                 newLength++;
             }
         }
         int[] newArray = new int[newLength];
-        for (int index : array) {
-            if (index != min) {
-                newArray[newIndex] = index;
+        for (int value : array) {
+            if (value != min) {
+                newArray[newIndex] = value;
                 newIndex++;
             }
         }

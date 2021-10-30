@@ -10,11 +10,11 @@ public class Task7 {
     public static void main(String[] args) {
         int[] array = {2, 3, 1, 6, 8, 5, 3, 0, 7, 10};
         int max = Integer.MIN_VALUE;
-        for (int i = 0; i < array.length; i++) {
-            int firstNumber = array[i];
-            int secondNumber = array[array.length - 1 - i];
-            if ((firstNumber + secondNumber > max) && (i != secondNumber)) {
-                max = (array[i] + array[array.length - 1 - i]);
+        for (int index = 0; index < array.length; index++) {
+            int firstNumber = array[index];
+            int secondNumber = array[array.length - 1 - index];
+            if ((firstNumber + secondNumber > max) && (index != secondNumber)) {
+                max = (array[index] + array[array.length - 1 - index]);
             }
         }
         System.out.println("max = " + max);

@@ -9,75 +9,67 @@ import java.util.Scanner;
 public class Task9 {
     public static void main(String[] args) {
         int numMax = 0;
-        int max;
-        int numB = 0;
-        int num = 0;
-        int c = 0;
-        int min;
-        int n;
-        try (Scanner s = new Scanner(System.in)) {
-            System.out.println("input n");
-            n = s.nextInt();
-            int[] a = new int[n];
-            int[] b = new int[n];
-            int[] d = new int[n];
+        int maxCount;
+        int identicalNumbersCount = 0;
+        int numberCountOfArray = 0;
+        int repeatNumbersCount = 0;
+        int minNumber;
+        int arrayLength;
+        try (Scanner sc = new Scanner(System.in)) {
+            System.out.println("input array size, n");
+            arrayLength = sc.nextInt();
+            int[] originArray = new int[arrayLength];
+            int[] repetitionArray = new int[arrayLength];
+            int[] minRepetitionsNumberArray = new int[arrayLength];
 
-            for (int i = 0; i < a.length; i++) {
+            for (int i = 0; i < originArray.length; i++) {
                 System.out.println("input number");
-                a[i] = s.nextInt();// Заполняем массив числами
+                originArray[i] = sc.nextInt();// Заполняем массив числами
             }
-            for (int i = 0; i < a.length; i++) {
-                for (int j = i; j < a.length; j++) {
-                    if (a[i] == a[j])
-                        num++; // Находим сколько раз каждое число находится в массиве
+            for (int i = 0; i < originArray.length; i++) {
+                for (int j = i; j < originArray.length; j++) {
+                    if (originArray[i] == originArray[j])
+                        numberCountOfArray++; // Находим сколько раз каждое число находится в массиве
                 }
-                b[i] = num;
-                num = 0; // Заполняем массив b этими значениями
+                repetitionArray[i] = numberCountOfArray;
+                numberCountOfArray = 0; // Заполняем массив repetitionArray этими значениями
             }
-
-            for (int i = 0; i < b.length; i++) {
-
-                if (b[i] == 1)
-                    numB++; // Если весь массив равен единице, то все элементы различны
+            for (int j : repetitionArray) {
+                if (j == 1)
+                    identicalNumbersCount++; // Если весь массив равен единице, то все элементы различны
             }
-
-            if (numB == b.length)
+            if (identicalNumbersCount == repetitionArray.length)
                 System.out.println("Повторяющиеся элементы отсутствуют");
-
             else {
-                max = b[0];
-                for (int i = 0; i < b.length; i++) {
-                    if (max < b[i]) {
-                        max = b[i];
-                        c = i;
+                maxCount = repetitionArray[0];
+                for (int i = 0; i < repetitionArray.length; i++) {
+                    if (maxCount < repetitionArray[i]) {
+                        maxCount = repetitionArray[i];
+                        repeatNumbersCount = i;
                     } // Находим максимальное количество повторяющихся элементов
                 }
-                for (int i = 0; i < b.length; i++) {
-                    if (max == b[i]) {
+                for (int j : repetitionArray) {
+                    if (maxCount == j) {
                         numMax++;
                     } // Находим количество максимально повторяющихся элементов
                 }
                 if (numMax == 1) { // Если их количество равно 1 ,то одно число повторяется максимальное количество
                     // раз
-                    System.out.println("Число " + a[c] + " встречается " + max + " раза"); // Выводим это число
+                    System.out.println("Число " + originArray[repeatNumbersCount] + " встречается " + maxCount + " раза"); // Выводим это число
                 } else {
-                    for (int i = 0; i < b.length; i++) {
-                        if (b[i] == max) {
-                            d[i] = a[i];
+                    for (int i = 0; i < repetitionArray.length; i++) {
+                        if (repetitionArray[i] == maxCount) {
+                            minRepetitionsNumberArray[i] = originArray[i];
                         } // Если же таких элементов несколько ,то заполняем новый массив D этими
                         // элементами
                     }
-
-                    min = d[0];
-                    c = 0;
-                    for (int i = 0; i < d.length; i++) {
-
-                        if (min > d[i] && d[i] != 0) {
-                            min = d[i];
-                            c = i;
+                    minNumber = minRepetitionsNumberArray[0];
+                    for (int value : minRepetitionsNumberArray) {
+                        if (minNumber > value && value != 0) {
+                            minNumber = value;
                         } // Находим в массиве D минимальное число
                     }
-                    System.out.println("Число " + min + " встречается " + max + " раза"); // Выводим минимальное число в
+                    System.out.println("Число " + minNumber + " встречается " + maxCount + " раза"); // Выводим минимальное число в
                     // массиве ,которое встречается
                     // максимальное количество раз
                 }

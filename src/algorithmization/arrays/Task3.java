@@ -10,10 +10,10 @@ public class Task3 {
         int zeroCount = 0;
         int positiveCount = 0;
         int[] array = {3, 5, 0, -5, 2, -8, 0};
-        for (int i : array) {
-            if (i < 0) {
+        for (int value : array) {
+            if (value < 0) {
                 negativeCount++;
-            } else if (i == 0) {
+            } else if (value == 0) {
                 zeroCount++;
             } else {
                 positiveCount++;
