@@ -1,11 +1,11 @@
-package branchAlgoritm;
+package basic.linear;
 
 import java.util.Scanner;
 
-/**
- * Найти max{min(a, b), min(c, d)}
- */
-public class Task2 {
+public class Task1 {
+    /**
+     * Найдите значение функции: z = ( (a – 3 ) * b / 2) + c.
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("input a");
@@ -14,12 +14,9 @@ public class Task2 {
         int b = sc.nextInt();
         System.out.println("input c");
         int c = sc.nextInt();
-        System.out.println("input d");
-        int d = sc.nextInt();
-        int firstMin = Math.min(a, b);
-        int secondMin = Math.min(c, d);
-        int max = Math.max(firstMin, secondMin);
-        System.out.println(max);
+        int z;
+        z = ((a - 3) * b / 2) + c;
+        System.out.println(z);
         sc.close();
     }
 }

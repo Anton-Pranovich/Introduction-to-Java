@@ -1,10 +1,12 @@
-package lenear;
+package basic.linear;
 
 import java.util.Scanner;
 
-public class Task1 {
+public class Task2 {
+
     /**
-     * Найдите значение функции: z = ( (a – 3 ) * b / 2) + c.
+     * Вычислить значение выражения по формуле
+     * (все переменные принимают действительные значения):
      */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
@@ -14,8 +16,8 @@ public class Task1 {
         int b = sc.nextInt();
         System.out.println("input c");
         int c = sc.nextInt();
-        int z;
-        z = ((a - 3) * b / 2) + c;
+        double z;
+        z = ((b + (Math.sqrt(Math.pow(b, 2) + 4 * a * c))) / 2 * a) - ((Math.pow(a, 3)) * c + Math.pow(b, -2));
         System.out.println(z);
         sc.close();
     }

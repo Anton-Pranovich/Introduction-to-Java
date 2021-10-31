@@ -1,4 +1,4 @@
-package lenear;
+package basic.linear;
 
 import java.util.Scanner;
 

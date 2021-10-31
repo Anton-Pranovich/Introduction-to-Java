@@ -1,4 +1,4 @@
-package loop;
+package basic.loop;
 
 import java.util.Scanner;
 
@@ -28,5 +28,4 @@ public class Task8 {
             }
         }
     }
-
 }

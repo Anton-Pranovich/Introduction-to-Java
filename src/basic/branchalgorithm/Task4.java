@@ -1,4 +1,4 @@
-package branchAlgoritm;
+package basic.branchalgorithm;
 
 import java.util.Scanner;
 
