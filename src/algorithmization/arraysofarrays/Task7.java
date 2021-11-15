@@ -33,8 +33,7 @@ public class Task7 {
     }
 
     private static double value(int i, int j, int n) {
-        double value = Math.sin((Math.pow(i, 2) - Math.pow(j, 2)) / n);
-        return value;
+        return Math.sin((Math.pow(i, 2) - Math.pow(j, 2)) / n);
     }
 
     private static void printMatrix(double[][] matrix) {
