@@ -47,8 +47,8 @@ public class Task8 {
 
     private static void printMatrix(int[][] matrix) {
         for (int[] row : matrix) {
-            for (int column : row) {
-                System.out.print(column + "\t");
+            for (int value : row) {
+                System.out.print(value + "\t");
             }
             System.out.println();
         }
